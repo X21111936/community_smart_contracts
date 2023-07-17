@@ -1,0 +1,91 @@
+<%- include partials/header.ejs %>
+
+<div class="jumbotron">
+  <h1 class="display-4">Midland Wind Energy</h1>
+  <p class="lead">Community Smart Contracts</p>
+  <hr class="my-4">
+  <p></p>
+  <p class="lead">
+    <a class="btn btn-success btn-lg" href="https://www.derrinloughwindfarm.ie/the-project/" role="button">Learn more</a>
+  </p>
+</div>
+
+<% if(name) { %>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        Hello
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Your Eircode is <%= name %>.  </h5>
+        <h5 class="card-title">Please ensure your wallet is ready and press the Connect button</h5>
+      </div>
+    </div>
+</div>
+<% } %> 
+
+<div class="container">
+  <form action="/" method="post">
+    <div class="form-group">
+      <label for="name">Eircode</label>
+      <input type="text" class="form-control" name="name" placeholder="Enter Your Eircode here">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
+<% if(name) { %>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        Hello
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Your Wallet is <%= name %>.  </h5>
+        <h5 class="card-title">Please ensure your wallet is ready and press the Connect button</h5>
+      </div>
+    </div>
+</div>
+<% } %> 
+
+<div class="container">
+  <form action="/" method="post">
+    <div class="form-group">
+      <label for="name">Wallet address</label>
+      <input type="password" class="form-control" name="name" placeholder="Enter Your Wallet address here">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div class="container-fluid">
+  <form action="/" id="myForm"  class="mb-4 mb-lg-0">
+      
+      <div class= "col">
+          <div class="row">
+              <input type="password" name="eircode" class="form-control" id="eircode" placeholder="Enter your Eircode here" required />
+          </div>
+          <br>
+          
+      </div>
+      <br>
+      <div class="row">
+          <input type="password" class="form-control" name="wallet_address" id="wallet_address" placeholder="Enter your wallet address here" required/>
+      </div>
+    </div>
+    
+      
+      <button input type="submit" class="btn btn-light" onsubmit="function showMsg()">Submit</button>
+  </form>
+  <div class= "col"></div>
+</div>
+
+
+
+
+
+
+
+
+<%- include partials/footer.ejs %>

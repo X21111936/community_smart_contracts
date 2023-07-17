@@ -1,0 +1,117 @@
+<%- include partials/header.ejs %>
+
+
+
+<style>
+    /* Make the image fully responsive */
+    
+    .carousel-inner img {
+      width: 100%;
+      height: 25%;
+    }
+  </style>
+
+<body>
+
+  <div class="jumbotron">
+    <h1 class="display-4">Midland Wind Energy</h1>
+    <p class="lead">Community Smart Contracts</p>
+    <hr class="my-4">
+    <p></p>
+    <p class="lead">
+      <a class="btn btn-success btn-lg" href="https://www.derrinloughwindfarm.ie/the-project/" role="button">Learn more</a>
+    </p>
+  </div>
+
+  <div class="container">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+                <li data-target="#demo" data-slide-to="4"></li>
+
+    </ul>
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2019/12/Green-wind-farm-1024x514.jpg" alt="slide one" width="50" height="50">
+      <div class="carousel-caption">
+        <h3>Slide One</h3>
+        <p>Description slide one</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2020/01/Proximity-Map_1000-x-600.jpg" alt="slide two" width="50" height="50">
+      <div class="carousel-caption">
+        <h3>Slide Two</h3>
+        <p>Catchment Area</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2021/06/ML_Ariel_7_1000-x-667.jpg" alt="slide three" width="250" height="250">
+      <div class="carousel-caption">
+        <h3>Slide Three</h3>
+        <p>Description slide three</p>
+      </div>
+    </div>
+          <div class="carousel-item">
+      <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2017/04/Bord-na-Mona-Windfarm-Hero.jpg" alt="slide four" width="250" height="250">
+      <div class="carousel-caption">
+        <h3>Slide Four</h3>
+        <p>Description slide Four</p>
+      </div>
+    </div>
+                <div class="carousel-item">
+      <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2020/01/000006_turbines-and-hay-bales_666.jpg" alt="slide five" width="250" height="250">
+      <div class="carousel-caption">
+        <h3>Slide Five</h3>
+        <p>Description slide Five</p>
+      </div>
+    </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+    </a>
+    </div>
+  </div>  
+
+  <div class="container">
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Wind Speed</th>
+            <th scope="col">Noise levels</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>1111</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>1112</td>
+            <td>Normal</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>1113</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>1114</td>
+            <td>Normal</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+<%- include partials/footer.ejs %>

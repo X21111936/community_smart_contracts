@@ -1,0 +1,53 @@
+<%- include partials/header.ejs %>
+
+
+    <div class="jumbotron">
+        <h1 class="display-4">Midland Wind Energy</h1>
+        <p class="lead">Community Smart Contracts</p>
+        <hr class="my-4">
+        <p></p>
+        <p class="lead">Learn how your wallet works</p>
+        <hr class="my-4">
+        <p></p>
+        <p class="lead">
+        <a class="btn btn-success btn-lg" href="https://www.algorand.foundation/news/what-is-a-web3-wallet" role="button">Web3 Wallet</a>
+        </p>
+    </div>
+
+    
+        <div class="container d-flex align-items-center justify-content-center">
+            <div id="readArea"> 
+                <a class="btn btn-success" onclick="connectMetamask()">CONNECT TO METAMASK</button>
+                <p id="userArea">Status: Not connected to Metamask</p>
+                <!-- index html to meta-->
+            </div>
+     </div>
+        <script>
+        
+            let account;
+            const connectMetamask = async () => {
+                if(window.ethereum !== "underfined"){
+                    const accounts = await ethereum.request({method: "eth_requestAccounts"});
+                    account = accounts[0];
+                    document.getElementById("userArea").innerHTML = `User Account: ${account}`;
+                }
+            }
+        </script>
+ <br>
+
+        <div class = containerd-flex align-items-center justify-content-center>
+        <div class="col-lg-5">
+            <div class="video">
+        
+                <iframe width="1166" height="656" src="https://www.youtube.com/embed/yWfZnjkhhhg"
+                 title="MetaMask Tutorial: Beginners Guide on How to Use &amp; Safely Setup MetaMask" 
+                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                 allowfullscreen></iframe>
+            </div>
+        </div> 
+      </div>
+
+
+    
+
+<%- include partials/footer.ejs %>
