@@ -2,19 +2,31 @@
 
 pragma solidity ^0.6.6; 
   
+import "github.com/provable-things/ethereum-api/provableAPI.sol";
+
+import "./libraries/CBOR.sol";
+import "./interfaces/provable-interface.sol";
+import "./interfaces/provable-address-resolver-interface.sol";
+
  interface ERC20Interface { 
    function totalSupply() external view returns (uint256); 
    function balanceOf(address account) external view returns (uint256); 
    function allowance(address owner, address spender) external view returns (uint256); 
    function transfer(address recipient, uint256 amount) external returns (bool); 
    function approve(address spender, uint256 amount) external returns (bool); 
-   function transferFrom(address sender, address recipient, uint256 amount) external returns (bool); 
- 
+   function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+   
+    
+	//function deposit(uint256 amount) external payable (uint256);
+	//function withdraw(address payable _to, uint _amount) external (uint256);
+	 //function getBalance() external view returns(uint);
+	// function getAddress() external view returns(address);
   event Transfer(address indexed from, address indexed to, uint256 value); 
   event Approval(address indexed owner, address indexed spender, uint256 value); 
+
 } 
  
-contract myCaQuestion1 is ERC20Interface { 
+contract MWE_token is ERC20Interface { 
  
 	string public symbol; 
 	string public name; 
@@ -78,4 +90,22 @@ override returns (bool) {
 	 emit Approval(sender, recipient, amount); 
 	 return true; 
 	} 
+
+	//Address --> Contract -- deposit
+    function deposit() external payable {
+    }
+
+    //Contract --> Address  -- withdrawal
+    function withdraw(address payable _to, uint _amount) external {
+        _to.transfer(_amount);
+    }
+
+    function getBalance() external view returns(uint) {
+        return address(this).balance;
+    }
+
+    function getAddress() external view returns(address) {
+        return address(this);
+    }
+
 } 

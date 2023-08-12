@@ -1,27 +1,70 @@
 <%- include partials/header.ejs %>
 
 
-    <div class="jumbotron">
-        <h1 class="display-4">Midland Wind Energy</h1>
-        <p class="lead">Community Smart Contracts</p>
-        <hr class="my-4">
-        <p></p>
-        <p class="lead">Learn how your wallet works</p>
-        <hr class="my-4">
-        <p></p>
-        <p class="lead">
-        <a class="btn btn-success btn-lg" href="https://www.algorand.foundation/news/what-is-a-web3-wallet" role="button">Web3 Wallet</a>
-        </p>
+<body id=wallet class="bg-body-secondary">
+    <div class="container py-4 py-xl-5">
+        <div class="row gy-4 gy-md-0">
+            <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                <div style="max-width: 350px;">
+                    <h2 class="text-uppercase fw-bold" >INTRO TO METAMASK</h2>
+                    <p class="my-3" style="color: var(--bs-emphasis-color);font-weight: bold;">A tutorial on the use of your recommended digital wallet.</p><a class="btn btn-success btn-lg" role="button" href="https://support.metamask.io/hc/en-us/articles/360015489531-Getting-started-with-MetaMask" >Metamask</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-xl-5 m-xl-5">
+                    <section class="clean-block clean-info dark">
+                        <div class="container">
+                            <div class="videoWrapper"><iframe class="embed-responsive-item" allowfullscreen frameborder="0" src="https://www.youtube.com/embed/-HTubEJ61zU" width="100%" height="auto"></iframe></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="row gy-4 gy-md-0">
+            <div class="col-md-6">
+                <div class="p-xl-5 m-xl-5">
+                    <section class="clean-block clean-info dark">
+                        <div class="container">
+                            <div class="videoWrapper"><iframe class="embed-responsive-item" allowfullscreen frameborder="0" src="https://www.youtube.com/embed/nHhAEkG1y2U" width="100%" height="auto"></iframe></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                <div style="max-width: 350px;">
+                    <h2 class="text-uppercase fw-bold" >What is Web3</h2>
+                    <p class="my-3" style="color: var(--bs-emphasis-color);font-weight: bold;">A quick review of the new web3.</p><a class="btn btn-success btn-lg" role="button"  href="https://ethereum.org/en/web3/">Web3</a>
+                </div>
+            </div>
+        </div>
+        <div class="row gy-4 gy-md-0">
+            <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                <div style="max-width: 350px;">
+                    <h2 class="text-uppercase fw-bold" >Enter Details</h2>
+                    <p class="my-3" style="font-weight: bold;">Please enter your Eircode and the wallet address your MWE eircode NTF token was sent to.</p><a class="btn btn-success btn-lg" role="button" href="https://www.quicknode.com/guides/web3-fundamentals-security/basics-to-web3-wallets" >Button</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-xl-5 m-xl-5">
+                    <form>
+                        <div class="form-group mb-3"><label class="form-label text-secondary" >Eircode</label><input class="form-control" type="password" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email" /></div>
+                        <div class="form-group mb-3"><label class="form-label text-secondary" >Wallet Address</label><input class="form-control" type="password" required /></div><button class="btn btn-success btn-lg" type="submit" >Log In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+
 
     
         <div class="container d-flex align-items-center justify-content-center">
             <div id="readArea"> 
-                <a class="btn btn-success" onclick="connectMetamask()">CONNECT TO METAMASK</button>
+                <a class="btn btn-success btn-mg" onclick="connectMetamask()">CONNECT TO METAMASK</button>
                 <p id="userArea">Status: Not connected to Metamask</p>
-                <!-- index html to meta-->
+               
             </div>
      </div>
+     
         <script>
         
             let account;
@@ -33,19 +76,10 @@
                 }
             }
         </script>
- <br>
 
-        <div class = containerd-flex align-items-center justify-content-center>
-        <div class="col-lg-5">
-            <div class="video">
-        
-                <iframe width="1166" height="656" src="https://www.youtube.com/embed/yWfZnjkhhhg"
-                 title="MetaMask Tutorial: Beginners Guide on How to Use &amp; Safely Setup MetaMask" 
-                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                 allowfullscreen></iframe>
-            </div>
-        </div> 
-      </div>
+    
+
+       
 
 
     

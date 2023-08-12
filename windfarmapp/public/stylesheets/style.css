@@ -1,3 +1,5 @@
+@import url('../node_modules/font-awesome/css/font-awesome.min.css');
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +7,40 @@ body {
 
 a {
   color: #00B7FF;
+}
+
+#wallet{
+  background-image: url("wind-turbine1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  flex-direction: column;
+  height: auto;
+}
+
+
+.table{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.table thead th{
+  background: #009578;
+  color: #ffffff;
+}
+
+.table td,
+.table th{
+  padding: 10px 20px;
+}
+
+.table tbody tr:nth-of-type(even){
+  background: #eeeeee;
+}
+
+.table tbody tr:last-of-type{
+  border-bottom: 2px solid #009578;
 }

@@ -54,6 +54,28 @@
       </p>
     </div>
 
+	<div class="container py-4 py-xl-5">
+        <div class="row gy-4 gy-md-0">
+            <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                <div style="max-width: 350px;">
+                    <h2 class="text-uppercase fw-bold" >The Value of MWE Tokens</h2>
+                    <p class="my-3" style="color: var(--bs-emphasis-color);font-weight: bold;">A tutorial on the use of your recommended digital wallet.</p><a class="btn btn-success btn-lg" role="button" href="https://support.metamask.io/hc/en-us/articles/360015489531-Getting-started-with-MetaMask" >Metamask</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-xl-5 m-xl-5">
+                    <section class="clean-block clean-info dark">
+                        <div class="container">
+                            <div class="videoWrapper"><iframe class="embed-responsive-item" allowfullscreen frameborder="0" src="https://www.youtube.com/embed/-HTubEJ61zU" width="100%" height="auto"></iframe></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+      
+
+			
+
     <div id="readArea"> <!-- READING FROM CONTRACT -->
       <button onclick="connectMetamask()">CONNECT TO METAMASK</button>
       <p id="userArea">Status: Not connected to Metamask</p>
@@ -94,7 +116,7 @@
       }
 
       const connectContract = async () => {
-          const ABI = [
+          const ABI =[
 	{
 		"anonymous": false,
 		"inputs": [
@@ -282,10 +304,12 @@
 
         
           ;
-          const Address = "0x17b60ad3378ae4b7d8794bd5b3d8ebc8776c7ecf"; // Taking Address from Remix 
+          const Address = "0x6b7a52239Ee72262B589E7B62B6FFD9cEB89e588"; // Taking Address from Remix 
           window.web3 = await new Web3(window.ethereum);
           window.contract = await new window.web3.eth.Contract(ABI, Address);
           document.getElementById("contractArea").innerHTML = "Connected to Contract"; // calling the elementID above
+
+		  
       }
 
       const getContractAccount = async () => {

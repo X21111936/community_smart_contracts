@@ -1,0 +1,22 @@
+body {
+    background-image: url("../images/wind-turbine-sunset.png");
+    /* width: 100%;  
+    height: 662px;
+    background-size: 100% 100%; */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+} 
+
+
+.jumbotron {
+    text-align: center;
+    background: none;
+    padding: 0px;
+  }
+
+footer {
+    position: absolute;
+    /* bottom: 0; */
+}

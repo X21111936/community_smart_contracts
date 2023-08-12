@@ -1,88 +1,158 @@
 <%- include partials/header.ejs %>
 
-<div class="jumbotron">
-  <h1 class="display-4">Midland Wind Energy</h1>
-  <p class="lead">Community Smart Contracts</p>
-  <hr class="my-4">
-  <p></p>
-  <p class="lead">
-    <a class="btn btn-success btn-lg" href="https://www.derrinloughwindfarm.ie/the-project/" role="button">Learn more</a>
-  </p>
-</div>
-
-<% if(name) { %>
-  <div class="container">
-    <div class="card">
-      <div class="card-header">
-        Hello
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Your Eircode is <%= name %>.  </h5>
-        <h5 class="card-title">Please ensure your wallet is ready and press the Connect button</h5>
-      </div>
-    </div>
-</div>
-<% } %> 
-
-<div class="container">
-  <form action="/" method="post">
-    <div class="form-group">
-      <label for="name">Eircode</label>
-      <input type="text" class="form-control" name="name" placeholder="Enter Your Eircode here">
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
-</div>
-
-
-<% if(name) { %>
-  <div class="container">
-    <div class="card">
-      <div class="card-header">
-        Hello
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Your Wallet is <%= name %>.  </h5>
-        <h5 class="card-title">Please ensure your wallet is ready and press the Connect button</h5>
-      </div>
-    </div>
-</div>
-<% } %> 
-
-<div class="container">
-  <form action="/" method="post">
-    <div class="form-group">
-      <label for="name">Wallet address</label>
-      <input type="password" class="form-control" name="name" placeholder="Enter Your Wallet address here">
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
-</div>
-
-<div class="container-fluid">
-  <form action="/" id="myForm"  class="mb-4 mb-lg-0">
-      
-      <div class= "col">
-          <div class="row">
-              <input type="password" name="eircode" class="form-control" id="eircode" placeholder="Enter your Eircode here" required />
-          </div>
-          <br>
-          
-      </div>
-      <br>
-      <div class="row">
-          <input type="password" class="form-control" name="wallet_address" id="wallet_address" placeholder="Enter your wallet address here" required/>
-      </div>
-    </div>
+<html>
+<head>
     
-      
-      <button input type="submit" class="btn btn-light" onsubmit="function showMsg()">Submit</button>
-  </form>
-  <div class= "col"></div>
+   
+
+</head>
+
+<style>
+  /* Make the image fully responsive */
+  
+  .carousel-inner img {
+    width: 100%;
+    height: 15%;
+  }
+</style>
+<body>
+
+
+
+    
+   
+    
+     
+    
+    
+        <section class="py-4 py-xl-5" style="width: auto;">
+            <div class="container">
+                <div class="text-center p-4 p-lg-5">
+                    <h1 class="fw-bold mb-4">Midland Wind Energy</h1>
+                    <h5 class="my-3" style="font-weight: bold;">Community Smart Contracts</h5><a class="btn btn-success btn-lg" role="button" href="/contact">Contact us</a>
+                </div>
+            </div>
+        </section>
+        <div class="container py-4 py-xl-5">
+            <div class="row gy-4 gy-md-0">
+                <div class="col-md-6">
+                    <img src="/images/Wind_Energy_OCTOBER_Key_Statistics_small.jpg" />
+                </div>
+                <div class="col-md-6 d-md-flex align-items-md-center">
+                    <div style="max-width: 350px;">
+                        <h2 class="text-uppercase fw-bold">The importance of Wind Energy</h2>
+                        <p class="my-3" style="font-weight: bold;">A report from Wind Energy Ireland shows how important wind energy is to the country.</p><a  class="btn btn-success btn-lg" role="button" href="https://www.windenergyireland.com/">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container py-4 py-xl-5">
+            <div class="row gy-4 gy-md-0">
+                <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                    <div style="max-width: 350px;">
+                        <h2 class="text-uppercase fw-bold">Benifits to the local community</h2>
+                        <p class="my-3" style="font-weight: bold;">Economic benefits from wind energy include employment, lower bills arising from imported fossil fuels, a stable income for landowners who lease their land for wind farm development, income for local authorities through rates, and increased competition in the energy market which helps to lower costs for end users.</p><a  class="btn btn-success btn-lg" role="button" href="">More Info</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="container">
+                        <div id="demo" class="carousel slide" data-ride="carousel">
+                        <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                              <li data-target="#demo" data-slide-to="3"></li>
+                                    <li data-target="#demo" data-slide-to="4"></li>
+                    
+                        </ul>
+                        <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="/images/Derrinlough_Wind_Farm.jpg" alt="slide one" width="50" height="50">
+                          <div class="carousel-caption">
+                            <h3>Slide One</h3>
+                            <p>Description slide one</p>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2020/01/Proximity-Map_1000-x-600.jpg" alt="slide two" width="50" height="50">
+                          <div class="carousel-caption">
+                            <h3>Slide Two</h3>
+                            <p>Catchment Area</p>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2021/06/ML_Ariel_7_1000-x-667.jpg" alt="slide three" width="250" height="250">
+                          <div class="carousel-caption">
+                            <h3>Slide Three</h3>
+                            <p>Description slide three</p>
+                          </div>
+                        </div>
+                              <div class="carousel-item">
+                          <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2019/12/Green-wind-farm-1024x514.jpg" alt="slide four" width="250" height="250">
+                          <div class="carousel-caption">
+                            <h3>Slide Four</h3>
+                            <p>Description slide Four</p>
+                          </div>
+                        </div>
+                                    <div class="carousel-item">
+                          <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2020/01/000006_turbines-and-hay-bales_666.jpg" alt="slide five" width="250" height="250">
+                          <div class="carousel-caption">
+                            <h3>Slide Five</h3>
+                            <p>Description slide Five</p>
+                          </div>
+                        </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        </a>
+                        </div>
+                      </div> 
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container py-4 py-xl-5">
+            <div class="row gy-4 gy-md-0">
+                <div class="col-md-6">
+                    <img src="/images/wsi-imageoptim-smartcontracts21.jpg" />
+                </div>
+                <div class="col-md-6 d-md-flex align-items-md-center">
+                    <div style="max-width: 350px;">
+                        <h2 class="text-uppercase fw-bold">What are Smart Contracts</h2>
+                        <p class="my-3" style="font-weight: bold;">Smart contracts work by following simple “if/when…then…” statements that are written into code on a blockchain.
+                             The conditions involved in your contract are noise levels and wind speed. A network of computers executes the actions when these predetermined
+                              conditions have been met and verified. The blockchain is then updated when the transaction is completed. That means the transaction cannot be changed,
+                               and only parties who have been granted permission can see the results.<br>With Community Smart Contracts, MWE has agreed to compensate Registered 
+                               howeowners caused by noise levels above acceptable levels. This is achived through the use of noise level monitors at each homeowner and verified with 
+                               us through wind readings and turbine diagnostics. These conditions are built into the smart contract ensuring all parties can have trust in the process. </p>
+                               <a   class="btn btn-success btn-lg" role="button" href="https://www.investopedia.com/terms/s/smart-contracts.asp">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container py-4 py-xl-5">
+            <div class="row gy-4 gy-md-0">
+                <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                    <div style="max-width: 350px;">
+                        <h2 class="text-uppercase fw-bold">Why Digital Wallets are Important</h2>
+                        <p class="my-3" style="font-weight: bold;">To interact with the Community Smart Contract each household owner is required to have a wallet address. Please follow the
+                             link below for more information. We recommend MetaMask web3 wallet, but their are a number of options available</p><a class= "btn btn-success btn-lg" role="button" href="https://www.quicknode.com/guides/web3-fundamentals-security/basics-to-web3-wallets">More Info</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-xl-5 m-xl-5"><img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" src="/images/metamask_clear.jpg" /></div>
+                </div>
+            </div>
+        </div>
+     
+       
+   
+
 </div>
-
-
-
+</body>
 
 
 
