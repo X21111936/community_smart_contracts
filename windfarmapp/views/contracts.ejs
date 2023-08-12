@@ -48,6 +48,9 @@
       <h1 class="display-4">Midland Wind Energy</h1>
       <p class="lead">Community Smart Contracts</p>
       <hr class="my-4">
+      <% if (eircode && walletAddress) { %>
+		<p>You are logged into the account:<br>Eircode: <%= eircode %> <br> Wallet Address: <%= walletAddress %></p>
+	  <% } %>
       <p></p>
       <p class="lead">
         <a class="btn btn-success btn-lg" href="https://etherscan.io/txs" role="button">Connect to Etherscan</a>
@@ -97,6 +100,13 @@
   </div>
 
 
+
+
+<div id="writeArea"><!-- WRITING TO CONTRACT "setter" -->
+	<button onclick="depositContract()">Send ether to the Contract</button><br>
+	<input type="number" id="depositInput" placeholder="Enter Amount"><br> <br>
+	  <!-- Deposit to contract calling on deposit function -->
+
       <button onclick="withdraw()">WITHDRAW TOKENS TO ANY ADDRESS</button> <br>
       <input type="text" id="addressInput" placeholder="Enter Address"> <br>
       <input type="number" id="amountInput" placeholder="Enter Amount"> 
@@ -118,117 +128,38 @@
       const connectContract = async () => {
           const ABI =[
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "spender",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "Approval",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "Transfer",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "spender",
-				"type": "address"
-			}
-		],
-		"name": "allowance",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
+		"inputs": [],
+		"name": "deposit",
+		"outputs": [],
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "spender",
+				"internalType": "address payable",
+				"name": "_to",
 				"type": "address"
 			},
 			{
 				"internalType": "uint256",
-				"name": "amount",
+				"name": "_amount",
 				"type": "uint256"
 			}
 		],
-		"name": "approve",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
+		"name": "withdraw",
+		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
+		"inputs": [],
+		"name": "getAddress",
 		"outputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "address",
 				"name": "",
-				"type": "uint256"
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -236,7 +167,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "totalSupply",
+		"name": "getBalance",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -246,65 +177,12 @@
 		],
 		"stateMutability": "view",
 		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "recipient",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "transfer",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "recipient",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "transferFrom",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	}
 ]
 
         
           ;
-          const Address = "0x6b7a52239Ee72262B589E7B62B6FFD9cEB89e588"; // Taking Address from Remix 
+          const Address = "0x4068524cf22aa40ce81a5bbd3e047f420ed92544"; // Taking Address from Remix 
           window.web3 = await new Web3(window.ethereum);
           window.contract = await new window.web3.eth.Contract(ABI, Address);
           document.getElementById("contractArea").innerHTML = "Connected to Contract"; // calling the elementID above

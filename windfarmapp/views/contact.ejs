@@ -5,6 +5,14 @@
            <head>
               <title>OSM and Leaflet</title>
               <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+              <script>
+                function showMsg() {
+                  var email = document.getElementById('email').value;
+                  document.getElementById('successMsg').style.display = 'block';
+                  document.getElementById('successMsg').innerHTML = `Message has been successfully sent to ${email}!`;
+                  document.getElementById('myForm').reset();
+                }
+              </script>
            </head>
            <body>
 
@@ -13,16 +21,86 @@
                 <p class="lead">Contact Us</p>
                 <hr class="my-4">
                 <p></p>
-                <p class="lead">
-                  <a class="btn btn-success btn-lg" href="https://www.derrinloughwindfarm.ie/the-project/" role="button">Learn more</a>
-                </p>
               </div>
 
-          
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <table class="table table-bordered table-hover">
+                      <thead class="thead-inverse">
+                        <tr>
+                          <th>Location</th>
+                          <th>Monday - Friday</th>
+                          <th>Weekends</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                              <strong>Midland Wind Energy</strong><br>
+                              DerryLough,<br>
+                              Co. Offaly,<br>
+                              Ireland,<br>
+                              R42 V440<br>
+                              mwe@gmail.com<br>
+                          </td>
+                          <td>
+                          <label>Mon.</label> 8:30 am - 5:30 pm<br>
+                          <label>Tue.</label> 8:30 am - 5:30 pm<br>
+                          <label>Wed.</label>  8:30 am - 5:30 pm<br>
+                          <label>Thu.</label> 8:30 am - 5:30 pm<br>
+                          <label>Fri.</label> 8:30 am - 5:30 pm<br>
+                          </td>
+                          <td>
+                          <label>Sat.</label> 8:00 am - 1:00 pm<br>
+                          <label>Sun.</label> closed<br>
+                          </td>
+                        </tr>
+                      
+                      </tbody>
+                  </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col text-center">
+                    <form action="/" id="myForm"  class="mb-4 mb-lg-0" onsubmit="showMsg(); return false;">
+                      <div class="form-row" >
+                          <div class="col-md-6 form-group">
+                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required />
+                          </div>
+                          <br>
+                          <div class="col-md-6 form-group">
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required />
+                          </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required/>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                          <textarea class="form-control" name="message" placeholder="Type Message" required></textarea>
+                      </div>
+                      <br>
+                      <div id="successMsg" style="display: none;">Message has been successfully sent!</div>
+                      <br>
+                      <button input type="submit" class="btn btn-light" onsubmit="function showMsg()">Contact Now</button>
+                  </form>
+                  
+                  </div>
+                  <div class="col">
+                    <div class="map">
+                          
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9274.051517427324!2d-7.881808878698245!3d53.19609712620928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2suk!4v1689082589643!5m2!1sen!2suk" 
+                      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                  </div>
+                </div>
+              </div>
     
            
              
-            <section class="contact-us">
+            <!-- <section class="contact-us">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
@@ -66,150 +144,13 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
-            <div class="container">
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-                      <li data-target="#demo" data-slide-to="3"></li>
-                            <li data-target="#demo" data-slide-to="4"></li>
-            
-                </ul>
-                <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2019/12/Green-wind-farm-1024x514.jpg" alt="slide one" width="50" height="50">
-                  <div class="carousel-caption">
-                    <h3>Slide One</h3>
-                    <p>Description slide one</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2020/01/Proximity-Map_1000-x-600.jpg" alt="slide two" width="50" height="50">
-                  <div class="carousel-caption">
-                    <h3>Slide Two</h3>
-                    <p>Catchment Area</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2021/06/ML_Ariel_7_1000-x-667.jpg" alt="slide three" width="250" height="250">
-                  <div class="carousel-caption">
-                    <h3>Slide Three</h3>
-                    <p>Description slide three</p>
-                  </div>
-                </div>
-                      <div class="carousel-item">
-                  <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2017/04/Bord-na-Mona-Windfarm-Hero.jpg" alt="slide four" width="250" height="250">
-                  <div class="carousel-caption">
-                    <h3>Slide Four</h3>
-                    <p>Description slide Four</p>
-                  </div>
-                </div>
-                            <div class="carousel-item">
-                  <img src="https://www.derrinloughwindfarm.ie/wp-content/uploads/sites/11/2020/01/000006_turbines-and-hay-bales_666.jpg" alt="slide five" width="250" height="250">
-                  <div class="carousel-caption">
-                    <h3>Slide Five</h3>
-                    <p>Description slide Five</p>
-                  </div>
-                </div>
-                </div>
-                <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                </a>
-                </div>
-              </div> 
-            
-              <script>
-                
-            
-                let weather = new OpenWeatherAPI({
-                key: "2241ef50ceb342a1a0fc475d45568040",
-                locationName: "Cloghan",
-                units: "metric"
-            })
-            
-              </script>
-            
-              <table class="weathertable">
-                <thead></thead>
-                <tbody></tbody>
-              </table>
-              
-              <div class="container">
-                <table class="table table-dark">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Wind Speed</th>
-                        <th scope="col">Noise levels</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>1111</td>
-                        <td>High</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>1112</td>
-                        <td>Normal</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>1113</td>
-                        <td>High</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>1114</td>
-                        <td>Normal</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
 
-    
+  
                        <!--table with openong hrs. When you hover the color will change.-->
-                       <div class="container-fluid">
-                        <table class="table table-bordered table-hover">
-                            <thead class="thead-inverse">
-                              <tr>
-                                <th>Location</th>
-                                <th>Monday - Friday</th>
-                                <th>Weekends</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>
-                                    <strong>Midland Wind Energy</strong><br>
-                                    DerryLough,<br>
-                                    Co. Offaly,<br>
-                                    Ireland,<br>
-                                    R42 V440<br>
-                                    mwe@gmail.com<br>
-                                </td>
-                                <td>
-                                <label>Mon.</label> 8:30 am - 5:30 pm<br>
-                                <label>Tue.</label> 8:30 am - 5:30 pm<br>
-                                <label>Wed.</label>  8:30 am - 5:30 pm<br>
-                                <label>Thu.</label> 8:30 am - 5:30 pm<br>
-                                <label>Fri.</label> 8:30 am - 5:30 pm<br>
-                                </td>
-                                <td>
-                                <label>Sat.</label> 8:00 am - 1:00 pm<br>
-                                <label>Sun.</label> closed<br>
-                                </td>
-                              </tr>
-                            
-                            </tbody>
-                        </table>
-                    </div>
+                       <!-- <div class="container-fluid">
+       
+                    </div> -->
          
 <%- include partials/footer.ejs %>

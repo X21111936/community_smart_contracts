@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var { OpenWeatherAPI } = require("openweather-api-node")
 var request = require('request')
-//var fetchHistoricalWindData = require("../api/accuweather");
+
 var API_KEY = "2241ef50ceb342a1a0fc475d45568040"
 
 let weather = new OpenWeatherAPI({
@@ -10,7 +10,7 @@ let weather = new OpenWeatherAPI({
   locationName: "Cloghan",
   units: "metric"
 })
-// Function to return a random noise level
+
 function getRandomNoiseLevel() {
   return Math.random() < 0.5 ? 'High' : 'Normal';
 }
@@ -54,6 +54,7 @@ function fetchHistoricalWindData() {
       });
   });
 }
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Midland Wind Energy', name:null });
@@ -76,7 +77,16 @@ router.get('/contact', function(req, res, next) {
 });
 
 router.get('/contracts', function(req, res, next) {
-  res.render('contracts', { title: 'Midland Wind Energy', name:null });
+  res.render('contracts', { title: 'Midland Wind Energy', name:null, eircode: null, walletAddress: null  });
+});
+
+router.post('/contracts', function(req, res, next) {
+  // Access form data from req.body
+  console.log(req.body);
+  const eircode = req.body.eircode;
+  const walletAddress = req.body.walletAddress;
+  // Render the 'contracts' view, passing the form data
+  res.render('contracts', { title: 'Midland Wind Energy', eircode, walletAddress });
 });
 
 router.get('/readings', async function (req, res, next) {
@@ -110,4 +120,3 @@ router.get('/forecasts', async function(req, res, next) {
 });
 
 module.exports = router;
-
